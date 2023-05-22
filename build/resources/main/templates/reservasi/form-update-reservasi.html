@@ -1,0 +1,239 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Update Reservasi</title>-->
+<!--    <head th:fragment="css">-->
+<!--        <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>-->
+<!--    </head>-->
+<!--    <head th:fragment="js">-->
+<!--        <script-->
+<!--                src="https://code.jquery.com/jquery-3.4.1.min.js"-->
+<!--                integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFIBw8HfCJo="-->
+<!--                crossorigin="anonymous"-->
+<!--        ></script>-->
+<!--        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>-->
+<!--        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>-->
+
+<!--        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
+<!--        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>-->
+<!--        <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js"></script>-->
+<!--        <script th:src="@{/js/bootstrap.min.js}"></script>-->
+<!--    </head>-->
+<!--<body>-->
+
+<!--<nav th:replace="fragments/fragment :: navbar('PIC Organizer')"></nav>-->
+<!--<div class="container">-->
+<!--    <br>-->
+<!--    <div class="alert alert-success" role="alert" th:text="${success}" th:if="${success}"></div>-->
+<!--    <div class="alert alert-danger" role="alert" th:text="${error}" th:if="${error}"></div>-->
+<!--    <div class="card m-4 p-4">-->
+<!--        <div class="card-body">-->
+<!--            <div class="justify-content-center">-->
+<!--                <h2 style="text-align: center" >Update Reservasi</h2>-->
+<!--                <br>-->
+<!--                <form th:action="@{/reservasi/update/} + ${updateReservasi.idReservasi}" th:object="${updateReservasi}" method="POST">-->
+<!--                    <input class="form-control" type="hidden" th:field="*{idReservasi}"/>-->
+
+<!--                    Nama : <br>-->
+<!--                    <h5 class="form-control" type="text" th:text="${savedCustomer.nama}"  th:field="${savedCustomer.uuid}" readonly></h5>-->
+<!--                    <br>-->
+
+<!--                    No telp : <br>-->
+<!--                    <h5 class="form-control" type="text" th:text="${savedCustomer.telepon}" readonly></h5>-->
+<!--                    <br>-->
+
+<!--                    Tanggal : <br>-->
+<!--                    <input class="form-control" type="date" th:field="*{tanggal}" />-->
+<!--                    <br><br>-->
+
+<!--                    Status: <br>-->
+<!--                    <select th:field="*{status}">-->
+<!--                        <option th:value="'1'" th:text="'Softbook'"></option>-->
+<!--                        <option th:value="'2'" th:text="'Down Payment 1'"></option>-->
+<!--                        <option th:value="'3'" th:text="'Down Payment 2'"></option>-->
+<!--                        <option th:value="'4'" th:text="'Fully Paid'"></option>-->
+<!--                    </select>-->
+<!--                    <br><br>-->
+
+<!--&lt;!&ndash;                    Photography : <br>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="form-row">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <select required name="vendorPhotography" id="vendorPhotogoraphy" class="form-group col-md-6" th:field="*{listVendorReservasi[1]}">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <option selected value="">&#45;&#45;Pilih Vendor&#45;&#45;</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                            <option th:each="vendor:${listVendor}"&ndash;&gt;-->
+<!--&lt;!&ndash;                                    th:if="${vendor.katalog.kategori == 'Photography'}"&ndash;&gt;-->
+<!--&lt;!&ndash;                                    th:field="*{listVendorReservasi[1]}"&ndash;&gt;-->
+<!--&lt;!&ndash;                                    th:value="${{vendor.uuid}}"&ndash;&gt;-->
+<!--&lt;!&ndash;                                    th:text="${vendor.nama}">&ndash;&gt;-->
+<!--&lt;!&ndash;                            </option>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </select>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <div class="form-group col-md-4">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <a href="/katalog-Photography" class="link-dark">Cek List Photography</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+
+<!--                    <button class="btn btn-success" type="submit" >Submit</button>-->
+<!--                    <a class="btn btn-outline-info" th:href="'/katalog-' + ${kategori}">Kembali</a>-->
+<!--                </form>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Update Reservasi</title>
+  <head th:fragment="css">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+  </head>
+  <head th:fragment="js">
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFIBw8HfCJo="
+            crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="https://getbootstrap.com/docs/4.1/assets/js/vendor/popper.min.js"></script>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+  </head>
+
+<body style="background-color: #C7BC9C">
+<nav th:replace="fragments/fragment :: navbar('PIC')"></nav>
+<div class="container">
+  <div class="card m-4 p-4 shadow p-3 mb-5 bg-white rounded">
+    <div class="card-body">
+      <div class="alert alert-success" role="alert" th:text="${success}" th:if="${success}"></div>
+      <div class="alert alert-danger" role="alert" th:text="${error}" th:if="${error}"></div>
+      <br>
+
+      <div class="justify-content-center">
+        <h2 style="text-align: center" >Update Reservasi</h2>
+        <br>
+        <form th:action="@{/reservasi/update/} + ${updatedReservasi.idReservasi}" method="POST" id="updateForm">
+          <input class="form-control" type="hidden" th:field="*{updatedReservasi.idReservasi}"/>
+          <!--                    <input class="form-control" type="hidden" th:field="*{customer.uuid}"/>-->
+          <!--          <input class="form-control" type="hidden" name="customer" th:field="*{updatedReservasi.customer}"/>-->
+
+          Nama : <br>
+          <!--          <select readonly="readonly"  class="form-control">-->
+          <!--            <option th:value="*{customer.uuid}" th:text="*{updatedReservasi.customer.uuid}"></option>-->
+          <!--          </select>-->
+          <h5 class="form-control" type="text" th:text="${updatedReservasi.customer.nama}"  readonly></h5>
+
+
+          <br>
+
+          No telp : <br>
+          <h5 class="form-control" type="text" th:text="${updatedReservasi.customer.telepon}" readonly></h5>
+          <br>
+
+          Tanggal : <br>
+          <input class="form-control" type="date" th:field="*{updatedReservasi.tanggal}" />
+          <br>
+
+          Status: <br>
+          <select th:field="*{updatedReservasi.status}">
+            <option th:value="'1'" th:text="'Softbook'"></option>
+            <option th:value="'2'" th:text="'Down Payment 1'"></option>
+            <option th:value="'3'" th:text="'Down Payment 2'"></option>
+            <option th:value="'4'" th:text="'Fully Paid'"></option>
+          </select>
+          <br>
+
+          Catering : <br>
+          <div class="form-row">
+            <select required name="vendorCatering" id="vendorCatering" class="form-group col-md-6" th:field="*{updatedReservasi.listVendorReservasi[5]}">
+              <option selected value="">--Pilih Vendor--</option>
+              <option th:each="vendorCatering:${listVendor}"
+                      th:if="${vendorCatering.kategori.kategori == 'Catering'}"
+                      th:value="${vendorCatering.uuid}"
+                      th:text="${vendorCatering.nama}" >
+
+              </option>
+            </select>
+            <div class="form-group col-md-4">
+              <a href="/katalog-Catering" class="link-dark">Cek List Catering</a>
+            </div>
+          </div>
+
+          Photography : <br>
+          <div class="form-row">
+            <select required name="vendorPhotography" id="vendorPhotogoraphy" class="form-group col-md-6" th:field="*{updatedReservasi.listVendorReservasi[6]}">
+              <option selected value="">--Pilih Vendor--</option>
+              <option th:each="vendor:${listVendor}"
+                      th:if="${vendor.kategori.kategori == 'Photography'}"
+                      th:value="${vendor.uuid}"
+                      th:text="${vendor.nama}">
+              </option>
+            </select>
+            <div class="form-group col-md-4">
+              <a href="/katalog-Photography" class="link-dark">Cek List Photography</a>
+            </div>
+          </div>
+
+          Decoration : <br>
+          <div class="form-row">
+            <select required name="vendorDecoration" id="vendorDecoration" class="form-group col-md-6" th:field="*{updatedReservasi.listVendorReservasi[7]}">
+              <option selected value="">--Pilih Vendor--</option>
+              <option th:each="vendor:${listVendor}"
+                      th:if="${vendor.kategori.kategori == 'Decoration'}"
+                      th:value="${vendor.uuid}"
+                      th:text="${vendor.nama}">
+              </option>
+            </select>
+            <div class="form-group col-md-4">
+              <a href="/katalog-Decoration" class="link-dark">Cek List Decoration</a>
+            </div>
+          </div>
+
+          Entertainment : <br>
+          <div class="form-row">
+            <select required name="vendorEntertainment" id="vendorEntertainment" class="form-group col-md-6" th:field="*{updatedReservasi.listVendorReservasi[8]}">
+              <option selected value="">--Pilih Vendor--</option>
+              <option th:each="vendor:${listVendor}"
+                      th:if="${vendor.kategori.kategori == 'Entertainment'}"
+                      th:value="${vendor.uuid}"
+                      th:text="${vendor.nama}">
+              </option>
+            </select>
+            <div class="form-group col-md-4">
+              <a href="/katalog-Entertainment" class="link-dark">Cek List Entertainment</a>
+            </div>
+          </div>
+
+          Attire : <br>
+          <div class="form-row">
+            <select required name="vendorAttire" id="vendorAttire" class="form-group col-md-6" th:field="*{updatedReservasi.listVendorReservasi[9]}">
+              <option selected value="">--Pilih Vendor--</option>
+              <option th:each="vendor:${listVendor}"
+                      th:if="${vendor.kategori.kategori == 'Attire'}"
+                      th:value="${vendor.uuid}"
+                      th:text="${vendor.nama}">
+              </option>
+            </select>
+            <div class="form-group col-md-4">
+              <a href="/katalog-Attire" class="link-dark">Cek List Attire</a>
+            </div>
+          </div>
+
+          <br>
+          <a class="btn btn-outline-info" th:href="@{/reservasi/} + ${updatedReservasi.idReservasi}">Kembali</a>
+          <button class="btn btn-success" type="submit" name="save" form="updateForm">Submit</button>
+<!--          <a class="btn btn-outline-info" th:href="'/katalog-' + ${kategori}">Kembali</a>-->
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

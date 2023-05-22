@@ -1,0 +1,603 @@
+/*-------------------------------
+    Dark Theme  CSS
+-------------------------------*/
+
+//Color Variable
+$clr_white: #fff;
+$clr_offwhite: rgba(255,255,255,0.85);
+$clr_black: #000;
+$clr_aztech: #091315;
+$clr_cod: #191919;
+$clr_grey: #ABA8B0;
+$clr_mine_shaft: #3B3B3B;
+$clr_mirage:#231F3E;
+$clr_chathamas:#14467B;
+$clr_genoa:#1B7261; 
+$clr_selago:#F1F7FD; 
+$clr_mystic:#ECF0F2; 
+$clr_cove:#051145; 
+
+.switch-theme-mode{
+    position: fixed;
+    top: 200px;
+    right: 15px;
+    z-index: 99;
+}
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    &.round {
+        border-radius: 50%;
+        &:before{
+            border-radius: 50%;
+        }
+    }
+    &:before {
+        position: absolute;
+        content: "";
+        height: 35px;
+        width: 35px;
+        left: 0px;
+        bottom: 4px;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        -webkit-transition: 0.4s;
+        transition: 0.4s;
+        box-shadow: 0 0px 15px #2020203d;
+        background: white url('../img/night.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: $clr_aztech;
+        background-size: 17px;
+    }
+}
+input:checked + .slider {
+  background-color: transparent;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px  transparent;
+}
+input:checked + .slider:before {
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  background: white url('../img/sunny.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 18px;
+
+}
+/*---------------------------------
+    Color CSS For Elements 
+-----------------------------------*/
+.theme-light {
+    .navbar-brand{
+        .logo-dark{
+            display: none!important;
+        }
+        .logo-light{
+            display: block!important;
+        }
+    }
+}
+
+.theme-dark {
+    .navbar-brand{
+        .logo-light{
+            display: none!important;
+        }
+        .logo-dark{
+            display: block!important;
+        }
+    }
+    .td-cod,
+    .footer-wrap,
+    .btn.style3,
+    .service-wrap.style1::after,
+    .bg-mystic,
+    .promo-wrap.style3,
+    .counter-card-wrap.style2,
+    .checkout-promobox,
+    .checkout-form,
+    .bg-albastor {
+        background-color: $clr_cod!important;
+    }
+    body,
+    .bg-white,
+    .header-wrap.style1::after,
+    .header-wrap.style1.sticky,
+    .promo-wrap.style3::after,
+    .search-area{
+        background-color: $clr_black!important;
+    }
+    .td-aztech,
+    .contact-item,
+    .bg-athens,
+    .promo-card,
+    .testimonial-card,
+    .pricing-card,
+    .hero-wrap.style1,
+    .about-promo-box,
+    .promo-box,
+    .service-card.style1 .service-info,
+    .register-form,
+    .product-card,
+    .team-card .team-member-info,
+    .blog-card .blog-info,
+    .hero-wrap.style2,
+    .promo-card.style2 .promo-info,
+    .service-card.style2 .service-info,
+    .bg-selago,
+    .breadcrumb-wrap,
+    .project-card .project-info,
+    .checkout-promo-box,
+    .login-form-wrap,
+    .wp-block-quote{
+        background-color: $clr_aztech!important;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    h3 a,
+    a,
+    .register-form .form-group label,
+    .select-lang .navbar-language .dropdown-toggle::before,
+    .checkout-details .select-payment-method div label,
+    .btn:hover{
+        color: $clr_white!important;
+    }
+    p,span,
+    .checkbox label,
+    .content-feature-list li,
+    .login-form .login-body .form-group label,
+    .blog-card .blog-info .blog-metainfo li,
+    article ol li,
+    .terms-wrap ol li,
+    article p strong, 
+    .terms-wrap p strong,
+    .content-feature-list li,
+    article ol li, .service-desc ol li, .terms-wrap ol li,
+    .pricing-card .pricing-features li,
+    .post-metainfo li{
+        color: $clr_offwhite!important;
+    }
+    h3:hover a,
+    a:hover,
+    .copyright-text a{
+        color: $clr_genoa!important;
+    }
+    .btn{
+        &.style1{
+            &:before,
+            &:after{
+                background-color: $clr_aztech;
+                border-color: rgba(255, 255, 255, 0.15);
+            }
+        }
+        &.style2{
+            color: $clr_cove!important;
+            &:hover{
+                color: $clr_white!important;
+            }
+        }
+        &.style3{
+            &:hover{
+                color: $clr_genoa!important;
+            }
+        }
+        &.style4{
+            color: $clr_genoa!important;
+            &:hover{
+                color: $clr_white!important;
+            }
+        }
+    }
+    .progress-wrap svg.progress-circle path {
+        stroke: rgba(255, 255, 255,0.6); 
+    }
+    .progress-wrap::after {
+        color: $clr_white; 
+    }
+    article{
+        border-color: rgba(255,255,255,0.19);
+    }
+    .tag-list ul li a{
+        background: transparent;
+        border-color: rgba(255, 255, 255, 0.2);
+        color: $clr_white!important;
+    }
+    .tag-list ul li a:hover{
+        background: $clr_genoa!important;
+        color: $clr_white;
+        border-color: transparent;
+    }
+    .or-text {
+        &:before {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        p{
+            background-color: $clr_aztech;
+        }
+    }
+    .header-wrap{
+        &.style1,
+        &.style2{
+            .header-top{
+                background-color: $clr_black;
+            }
+            .header-bottom{
+                background-color: $clr_cod;
+                .searchbtn,
+                .shopcart{
+                    i{
+                        color: $clr_white;
+                    }
+                }
+            }
+        }
+        &.style3{
+            .header-top{
+                background-color: $clr_cod;
+                .header-top-right{
+                    .social-profile{
+                        &:before{
+                            background: rgba(255, 255, 255, 0.15);
+                        }
+                    }
+                }
+            }
+            .header-bottom{
+                .navbar{
+                    .navbar-nav{
+                        &>.nav-item{
+                            &>a{
+                                &.active{
+                                    color: $clr_white!important;
+                                }
+                            }
+                        }
+                    }
+                    .other-options{
+                        .option-item{
+                            .shopcart{
+                                span{
+                                    color: $clr_genoa!important;
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+    .breadcrumb-wrap:after{
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+    .header-wrap .navbar .other-options::before {
+        background-color: rgba(255, 255, 255, 0.18);
+    }
+    .accordion-item {
+        background: transparent;
+        .accordion-header {
+            .accordion-button{
+                background-color: transparent;
+                color: $clr_white;
+                span{
+                    border: 1px solid rgba(255, 255, 255, 0.2);
+                }
+            }
+        }
+    }
+    .search-area{
+        button{
+            i{
+                color: $clr_white;
+            }
+        }
+    }
+    .sidebar-widget{
+        box-shadow: none;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        &.style2{
+            border: none;
+        }
+    }
+    .category-box{
+        &.style1{
+            li{
+                a{
+                    background-color: $clr_aztech;
+                    &:hover{
+                        background-color: $clr_genoa;
+                        color: $clr_white!important;
+                    }
+                }
+            }
+        }
+    }
+    .product-quantity {
+        .qtySelector {
+            span {
+                color: $clr_white;
+                border: 1px solid rgba(255, 255, 255, 0.14);
+            }
+            input {
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                color: $clr_white
+            }
+        }
+    }
+    .service-card.style3,
+    .testimonial-card{
+        background-color: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .product-tablist {
+        .nav-item {
+            .nav-link {
+                color: $clr_white;
+                &.active {
+                    color: $clr_genoa;
+                }
+            }
+        }
+    }
+    .product-tab-content {
+        background-color: $clr_aztech;
+        .product_features{
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            li{
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                b{
+                    color: $clr_white;
+                }
+            }
+        }
+    }
+    .client-review-header{
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .cart-table {
+        table {
+            thead {
+                tr {
+                    th {
+                        color: $clr_white;
+                        border: 1px solid rgba(255, 255, 255, 0.2);
+                    }
+                }
+            }
+            tbody {
+                border-top:1px solid rgba(255, 255, 255, 0.2)!important;
+                tr {
+                    border: 1px solid rgba(255, 255, 255, 0.2);
+                    td {
+                        border-right: 1px solid rgba(255, 255, 255, 0.2);
+                        background-color: transparent;
+                        .product-img{
+                            background-color: $clr_aztech;
+                        }
+                        .cart-item {
+                            color: $clr_white;
+                            &:hover{
+                                color: $clr_genoa;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .checkout-details{
+        background-color: $clr_aztech;
+    }
+    .cart-total {
+        &.style2{
+            background-color: $clr_aztech;
+        }
+        .cart-total-wrap{
+            .cart-total-item {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+                &:last-child{
+                    border-bottom:1px solid rgba(255, 255, 255, 0.2);
+                }
+                p,
+                span {
+                    b{
+                        color: $clr_white;
+                    }
+                }
+            }
+        }
+    }
+    .cart-coupon{
+        padding: 15px 15px 0;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-top: none;
+    }
+    .checkout-promobox {
+        background: #ECF0F2;
+        padding: 15px;
+        margin: 0 0 25px;
+        i{
+            color: $clr_genoa;
+            position: relative;
+            top: 4px;
+            font-size: 20px;
+            margin-right: 5px;
+        }
+    }
+    .checkout-form {
+        margin: 0 0 25px;
+        padding: 25px;
+        background-color: $clr_aztech;
+        .checkout-box-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+        .form-group {
+            margin: 0 0 15px;
+            label{
+                margin-bottom: 10px;
+                display: block;
+                color: $clr_black;
+            }
+            input,
+            textarea {
+                background: $clr_white;
+                color: $clr_black;
+                width: 100%;
+                padding: 13px 15px 13px 20px;
+                &::placeholder {
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+    .header-wrap.style1 .navbar .navbar-nav .nav-item a:hover,
+    .header-wrap.style1 .navbar .navbar-nav .nav-item a:focus,
+    .header-wrap.style1 .navbar .navbar-nav .nav-item a.active {
+        color: $clr_genoa!important;
+    }
+    .btn.style4,
+    .comment-item{
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+    .post-author,
+    #cmt-form,
+    .contact-form,
+    .pricing-card.style2,
+    .comment-item-wrap .comment-item,
+    .post-meta-option{
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    input,textarea,
+    #cmt-form .comment-form .form-group input,
+    #cmt-form .comment-form .form-group textarea,
+    #contactForm .form-group input,
+    .register-form .form-group input,
+    .client-review #cmt-form .form-group input,
+    .client-review #cmt-form .form-group textarea,
+    #contactForm .form-group textarea,
+    .checkout-form .form-group input,
+    .checkout-form .form-group textarea,
+    .login-form-wrap .login-body .form-group input{
+        background-color: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: $clr_white;
+    }
+    .client-review #cmt-form{
+        border: none;
+    }
+    .client-review #cmt-form .form-group input,
+    .client-review #cmt-form .form-group textarea{
+        background-color: transparent!important;
+        border: 1px solid rgba(255, 255, 255, 0.2)!important;
+        color: $clr_white!important;
+    }
+    .partner-item img {
+        filter: brightness(0) invert(1);
+    }
+    .page-nav li a{
+        border: 1px solid rgba(255, 255, 255, 0.28);
+        background-color: transparent;
+        &:hover{
+            background-color: $clr_genoa;
+            color: $clr_white!important;
+        }
+    }
+    .login-form-wrap .login-form .form-group input,
+    .contact-widget .form-group input,
+    .contact-widget .form-group textarea,
+    .search-box .form-group input,
+    .appointment-form .form-group input,
+    .appointment-form .form-group textarea,
+    .appointment-form .form-group select{
+        background-color: $clr_black;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: $clr_white;
+        &::placeholder{
+            color: $clr_white;
+        }
+    }
+    .checkout-form .form-group select,
+    .register-form .form-group select{
+        background-color: $clr_aztech;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: $clr_white;
+    }
+
+    select{
+        background-image: url(../img/down-arrow-white.png);
+    }
+    .login-form-wrap,
+    .book-appointment-form {
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+}
+@media only screen and (max-width:991px) {
+    .theme-dark{
+        .main-menu-wrap,
+        .header-wrap .navbar .navbar-nav .nav-item .dropdown-menu{
+            background-color: $clr_aztech;
+        }
+        .menu-close i,
+        .header-wrap .navbar .navbar-nav .nav-item .menu-expand i{
+            color: $clr_white!important;
+        }
+        .header-wrap .navbar .navbar-nav .nav-item a.active,
+        .main-menu li a.active{
+            color: $clr_genoa!important;
+        }
+        .main-menu li a.active,
+        .main-menu li a{
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        .header-wrap.style2 .navbar .navbar-nav .nav-item .dropdown-menu li,
+        .header-wrap .navbar .navbar-nav .nav-item a {
+            border-color:rgba(255, 255, 255, 0.2);
+        }
+    }
+}
+@media only screen and (min-width:992px) {
+    .theme-dark{
+        .header-wrap .navbar .navbar-nav .nav-item .dropdown-menu,
+        .main-menu-wrap #menu ul li.has-children .sub-menu{
+            background-color: $clr_aztech;
+        }
+        .header-wrap .navbar .navbar-nav .nav-item a:hover,
+        .header-wrap .navbar .navbar-nav .nav-item a:focus,
+        .header-wrap .navbar .navbar-nav .nav-item a.active{
+              color: $clr_genoa!important;
+         }
+         .header-wrap.style2 .navbar .navbar-nav .nav-item .dropdown-menu li{
+            border-color:rgba(255, 255, 255, 0.15);
+        }
+    }
+}

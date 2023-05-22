@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Link of CSS files -->
+    <link rel="stylesheet" th:href="@{/assets/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/flaticon.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/remixicon.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/ionicons.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/owl.carousel.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/odometer.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/fancybox.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/aos.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/style.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/responsive.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/dark-theme.css}">
+    <title>Beranda</title>
+    <link rel="icon" type="image/png" th:href="@{/assets/img/favicon.png}">
+  </head>
+
+  <body>
+
+    <!--Preloader starts-->
+    <div class="loader js-preloader">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <!--Preloader ends-->
+
+    <!-- Theme Switcher Start -->
+    <div class="switch-theme-mode">
+      <label id="switch" class="switch">
+        <input type="checkbox" onchange="toggleTheme()" id="slider">
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <!-- Theme Switcher End -->
+    <nav th:replace="fragments/fragment"></nav>
+
+
+      <!-- Hero Section Start -->
+      <section class="hero-wrap style2">
+        <div class="hero-slider-one owl-carousel">
+          <div class="hero-slide-item">
+            <div class="container">
+              <div class="row gx-5 align-items-center">
+                <div class="col-lg-6 order-lg-1 order-md-2 order-2">
+                  <div class="hero-content">
+                    <span>We Are Wedding Planner</span>
+                    <h1>Making Special Memories For Your Wedding</h1>
+                    <p>Sed ut persiciatis unde omnis iste natus error sit voluptate maccusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore.</p>
+                    <div class="hero-btn">
+                      <a th:href="@{/reservasi/add}" class="btn style1">Reservasi Sekarang</a>
+                      <a th:href="@{/aboutus}" class="btn style2">Selengkapnya</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 order-lg-2 order-md-1 order-1">
+                  <div class="hero-img-wrap">
+                    <img src="/assets/img/hero/hero-shape-8.png" alt="Image" class="hero-shape-one moveHorizontal_reverse">
+                    <img src="/assets/img/hero/hero-shape-9.png" alt="Image" class="hero-shape-two bounce">
+                    <img src="/assets/img/hero/hero-shape-10.png" alt="Image" class="hero-shape-three">
+                    <img src="/assets/img/hero/hero-shape-11.png" alt="Image" class="hero-shape-four moveHorizontal">
+                    <div class="hero-img-one">
+                      <img src="/assets/img/hero/Wedding2.jpg" alt="Image">
+                    </div>
+                    <div class="hero-img-two">
+                      <img src="/assets/img/hero/Wedding1.jpg" alt="Image">
+                      <img src="/assets/img/hero/Wedding3.jpg" alt="Image">
+                    </div>
+                    <a class="play-now" data-fancybox="" href="https://youtu.be/gQVBcVRojsE">
+                      <i class="ri-play-fill"></i>
+                      <span class="ripple"></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-slide-item">
+            <div class="container">
+              <div class="row gx-5 align-items-center">
+                <div class="col-lg-6 order-lg-1 order-md-2 order-2">
+                  <div class="hero-content">
+                    <span>Welcome To Wazo</span>
+                    <h1>A Truly Magnificent Setting For Your Special Event</h1>
+                    <p>Sed ut persiciatis unde omnis iste natus error sit voluptate maccusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore.</p>
+                    <div class="hero-btn">
+                      <a href="register.html" class="btn style1">Register Now</a>
+                      <a href="about.html" class="btn style2">Read More</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 order-lg-2 order-md-1 order-1">
+                  <div class="hero-img-wrap">
+                    <img src="/assets/img/hero/hero-shape-8.png" alt="Image" class="hero-shape-one moveHorizontal_reverse">
+                    <img src="/assets/img/hero/hero-shape-9.png" alt="Image" class="hero-shape-two bounce">
+                    <img src="/assets/img/hero/hero-shape-10.png" alt="Image" class="hero-shape-three">
+                    <img src="/assets/img/hero/hero-shape-11.png" alt="Image" class="hero-shape-four moveHorizontal">
+                    <div class="hero-img-one">
+                      <img src="/assets/img/hero/hero-img-17.jpg" alt="Image">
+                    </div>
+                    <div class="hero-img-two">
+                      <img src="/assets/img/hero/hero-img-13.jpg" alt="Image">
+                      <img src="/assets/img/hero/hero-img-14.jpg" alt="Image">
+                    </div>
+                    <a class="play-now" data-fancybox="" href="https://www.youtube.com/watch?v=Yxw2MH1ODW0">
+                      <i class="ri-play-fill"></i>
+                      <span class="ripple"></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-slide-item">
+            <div class="container">
+              <div class="row gx-5 align-items-center">
+                <div class="col-lg-6 order-lg-1 order-md-2 order-2">
+                  <div class="hero-content">
+                    <span>Welcome To Wazo</span>
+                    <h1>Best &amp; Experienced Digital Wedding Planner Is Here</h1>
+                    <p>Sed ut persiciatis unde omnis iste natus error sit voluptate maccusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore.</p>
+                    <div class="hero-btn">
+                      <a href="register.html" class="btn style1">Register Now</a>
+                      <a href="about.html" class="btn style2">Read More</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 order-lg-2 order-md-1 order-1">
+                  <div class="hero-img-wrap">
+                    <img src="/assets/img/hero/hero-shape-8.png" alt="Image" class="hero-shape-one moveHorizontal_reverse">
+                    <img src="/assets/img/hero/hero-shape-9.png" alt="Image" class="hero-shape-two bounce">
+                    <img src="/assets/img/hero/hero-shape-10.png" alt="Image" class="hero-shape-three">
+                    <img src="/assets/img/hero/hero-shape-11.png" alt="Image" class="hero-shape-four moveHorizontal">
+                    <div class="hero-img-one">
+                      <img src="/assets/img/hero/hero-img-18.jpg" alt="Image">
+                    </div>
+                    <div class="hero-img-two">
+                      <img src="/assets/img/hero/hero-img-15.jpg" alt="Image">
+                      <img src="/assets/img/hero/hero-img-16.jpg" alt="Image">
+                    </div>
+                    <a class="play-now" data-fancybox="" href="https://www.youtube.com/watch?v=Yxw2MH1ODW0">
+                      <i class="ri-play-fill"></i>
+                      <span class="ripple"></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Hero Section End -->
+
+      <!-- Counter  Start -->
+      <div class="container">
+        <div class="counter-card-wrap style2 pb-75">
+          <div class="counter-card">
+                          <span class="counter-icon">
+                              <i class="flaticon-hand"></i>
+                          </span>
+            <div class="counter-text">
+              <h2 class="counter-num">
+                <span class="odometer" data-count="1542"></span>
+                <span class="target">+</span>
+              </h2>
+              <p>Flower Arrangements</p>
+            </div>
+          </div>
+          <div class="counter-card">
+                          <span class="counter-icon">
+                              <i class="flaticon-dove"></i>
+                          </span>
+            <div class="counter-text">
+              <h2 class="counter-num">
+                <span class="odometer" data-count="1260"></span>
+                <span class="target">+</span>
+              </h2>
+              <p>Ceromonies</p>
+            </div>
+          </div>
+          <div class="counter-card">
+                          <span class="counter-icon">
+                              <i class="flaticon-disco-ball"></i>
+                          </span>
+            <div class="counter-text">
+              <h2 class="counter-num">
+                <span class="odometer" data-count="150"></span>
+                <span class="target">+</span>
+              </h2>
+              <p>Wedding Cakes</p>
+            </div>
+          </div>
+          <div class="counter-card">
+                          <span class="counter-icon">
+                              <i class="flaticon-bow"></i>
+                          </span>
+            <div class="counter-text">
+              <h2 class="counter-num">
+                <span class="odometer" data-count="1000"></span>
+                <span class="target">+</span>
+              </h2>
+              <p>Happy Couples</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Counter  End -->
+
+<!--      &lt;!&ndash; Promo Section Start &ndash;&gt;-->
+<!--      <section class="promo-wrap pt-100 pb-75">-->
+<!--        <div class="container">-->
+<!--          <div class="section-title style1 text-center mb-30">-->
+<!--            <span>Our Features</span>-->
+<!--            <h2>Affordable &amp; Reliable Services</h2>-->
+<!--          </div>-->
+<!--          <div class="row justify-content-center">-->
+<!--            <div class="col-xl-4 col-lg-6 col-md-6">-->
+<!--              <div class="promo-card style2">-->
+<!--                <img src="/assets/img/about/promo-1.jpg" alt="Image">-->
+<!--                <div class="promo-info">-->
+<!--                  <h3>Made With Love</h3>-->
+<!--                  <p>Lorem ipsum dolor sit amet con ctetur elit ut Donec pretium egestas</p>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="col-xl-4 col-lg-6 col-md-6">-->
+<!--              <div class="promo-card style2">-->
+<!--                <img src="/assets/img/about/promo-2.jpg" alt="Image">-->
+<!--                <div class="promo-info">-->
+<!--                  <h3>Just Two Of Us</h3>-->
+<!--                  <p>Lorem ipsum dolor sit amet con ctetur elit ut Donec pretium egestas</p>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="col-xl-4 col-lg-6 col-md-6">-->
+<!--              <div class="promo-card style2">-->
+<!--                <img src="/assets/img/about/promo-3.jpg" alt="Image">-->
+<!--                <div class="promo-info">-->
+<!--                  <h3>The Wedding Bliss</h3>-->
+<!--                  <p>Lorem ipsum dolor sit amet con ctetur elit ut Donec pretium egestas</p>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </section>-->
+<!--      &lt;!&ndash; Promo Section End &ndash;&gt;-->
+
+<!--      &lt;!&ndash; About Section Start &ndash;&gt;-->
+<!--      <section class="about-wrap style2 ptb-100 bg-selago">-->
+<!--        <div class="container">-->
+<!--          <div class="row align-items-center gx-5">-->
+<!--            <div class="col-lg-6">-->
+<!--              <div class="about-img-wrap">-->
+<!--                <img src="/assets/img/about/about-shape-3.png" alt="Image" class="about-shape-one">-->
+<!--                <img src="/assets/img/about/about-img-3.jpg" alt="Image" class="about-img-one">-->
+<!--                <div class="about-img-two">-->
+<!--                  <img src="/assets/img/about/about-img-4.jpg" alt="Image">-->
+<!--                </div>-->
+<!--                <div class="about-promo-box">-->
+<!--                  <i class="flaticon-wedding-ring"></i>-->
+<!--                  <h2><span>25+</span>Years Of Experience</h2>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="col-lg-6">-->
+<!--              <div class="about-content">-->
+<!--                <div class="content-title style1">-->
+<!--                  <span>About Wazo</span>-->
+<!--                  <h2>We Inspire You To Bring Your Wedding In Real Life</h2>-->
+<!--                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, do eiusmod tempo incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrice risus commodo viverra maecenas accumsan.</p>-->
+<!--                </div>-->
+<!--                <div class="progressbar-wrap style2">-->
+<!--                  <div class="progress-bar" data-percentage="90%">-->
+<!--                    <h4 class="progress-title-holder clearfix">-->
+<!--                      <span class="progress-title">Jewelary</span>-->
+<!--                      <span class="progress-number-wrapper">-->
+<!--                                                  <span class="progress-number-mark">-->
+<!--                                                      <span class="percent"></span>-->
+<!--                                                  </span>-->
+<!--                                              </span>-->
+<!--                    </h4>-->
+<!--                    <div class="progress-content-outter">-->
+<!--                      <div class="progress-content"></div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                  <div class="progress-bar" data-percentage="80%">-->
+<!--                    <h4 class="progress-title-holder clearfix">-->
+<!--                      <span class="progress-title">Hair Style</span>-->
+<!--                      <span class="progress-number-wrapper">-->
+<!--                                                  <span class="progress-number-mark">-->
+<!--                                                      <span class="percent"></span>-->
+<!--                                                  </span>-->
+<!--                                              </span>-->
+<!--                    </h4>-->
+<!--                    <div class="progress-content-outter">-->
+<!--                      <div class="progress-content"></div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                  <div class="progress-bar" data-percentage="70%">-->
+<!--                    <h4 class="progress-title-holder clearfix">-->
+<!--                      <span class="progress-title">Perfect Dress</span>-->
+<!--                      <span class="progress-number-wrapper">-->
+<!--                                                  <span class="progress-number-mark">-->
+<!--                                                      <span class="percent"></span>-->
+<!--                                                  </span>-->
+<!--                                              </span>-->
+<!--                    </h4>-->
+<!--                    <div class="progress-content-outter">-->
+<!--                      <div class="progress-content"></div>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--                <a href="about.html" class="btn style1">Read More</a>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </section>-->
+<!--      &lt;!&ndash; About Section End &ndash;&gt;-->
+
+      <!-- Service Section Start -->
+      <section class="service-wrap pb-100">
+        <img src="/assets/img/shape-1.png" alt="Image" class="service-shape-one">
+        <div class="container">
+          <div class="section-title style1 text-center mb-30">
+            <span>Our Services</span>
+            <h2>We're Providing Best Services</h2>
+          </div>
+          <div class="service-slider-one style2 owl-carousel">
+            <div class="service-card style2">
+              <img src="/assets/img/service/entertainment.jpg" alt="Image">
+              <div class="service-info">
+                                  <span class="service-icon">
+                                      <i class="flaticon-wedding-bells"></i>
+                                  </span>
+                <h3><a th:href="@{/katalog-Entertainment}">Entertainment</a></h3>
+                <p>Lorem Ipsum has been the industry sta dummy text ever since the 1500s, when an unknown printer took a galley of type</p>
+                <a th:href="@{/katalog-Entertainment}" class="link style1">Selengkapnya</a>
+              </div>
+            </div>
+            <div class="service-card style2">
+              <img src="/assets/img/service/photography.jpg" alt="Image">
+              <div class="service-info">
+                                  <span class="service-icon">
+                                      <i class="flaticon-wedding-invitation-1"></i>
+                                  </span>
+                <h3><a th:href="@{/katalog-Photography}">Photograpy</a></h3>
+                <p>Lorem Ipsum has been the industry sta dummy text ever since the 1500s, when an unknown printer took a galley of type</p>
+                <a th:href="@{/katalog-Photography}" class="link style1">Selengkapnya</a>
+              </div>
+            </div>
+            <div class="service-card style2">
+              <img src="/assets/img/service/attire.jpg" alt="Image">
+              <div class="service-info">
+                                   <span class="service-icon">
+                                      <i class="flaticon-bride"></i>
+                                  </span>
+                <h3><a th:href="@{/katalog-Attire}">Attire</a></h3>
+                <p>Lorem Ipsum has been the industry sta dummy text ever since the 1500s, when an unknown printer took a galley of type</p>
+                <a th:href="@{/katalog-Attire}" class="link style1">Selengkapnya</a>
+              </div>
+            </div>
+            <div class="service-card style2">
+              <img src="/assets/img/service/wo.jpg" alt="Image">
+              <div class="service-info">
+                                   <span class="service-icon">
+                                      <i class="flaticon-wedding-invitation"></i>
+                                  </span>
+                <h3><a th:href="@{/katalog-WO}">Wedding Organizer</a></h3>
+                <p>Lorem Ipsum has been the industry sta dummy text ever since the 1500s, when an unknown printer took a galley of type</p>
+                <a th:href="@{/katalog-WO}" class="link style1">Selengkapnya</a>
+              </div>
+            </div>
+            <div class="service-card style2">
+              <img src="/assets/img/service/decoration.jpg" alt="Image">
+              <div class="service-info">
+                                   <span class="service-icon">
+                                      <i class="flaticon-wedding-arch"></i>
+                                  </span>
+                <h3><a th:href="@{/katalog-Decoration}">Decoration</a></h3>
+                <p>Lorem Ipsum has been the industry sta dummy text ever since the 1500s, when an unknown printer took a galley of type</p>
+                <a th:href="@{/katalog-Decoration}" class="link style1">Selengkapnya</a>
+              </div>
+            </div>
+            <div class="service-card style2">
+              <img src="/assets/img/service/catering.jpg" alt="Image">
+              <div class="service-info">
+                                   <span class="service-icon">
+                                      <i class="flaticon-wedding-invitation"></i>
+                                  </span>
+                <h3><a th:href="@{/katalog-Catering}">Catering</a></h3>
+                <p>Lorem Ipsum has been the industry sta dummy text ever since the 1500s, when an unknown printer took a galley of type</p>
+                <a th:href="@{/katalog-Catering}" class="link style1">Selengkapnya</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Service Section End -->
+
+<!--      &lt;!&ndash; Promo Video Start &ndash;&gt;-->
+<!--      <div class="container">-->
+<!--        <div class="promo-video style2 bg-f promo-bg-2">-->
+<!--          <a class="play-now" data-fancybox="" href="https://youtu.be/xsTuaCzII0E">-->
+<!--            <i class="ri-play-fill"></i>-->
+<!--            <span class="ripple"></span>-->
+<!--          </a>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="promo-video-wrap bg-f">-->
+<!--        <div class="container">-->
+<!--          <div class="row ptb-100">-->
+<!--            <div class="col-xl-8 offset-xl-2">-->
+<!--              <div class="content-title text-center">-->
+<!--                <h2>Telling Your Story Through Beautiful And Meaningful Photography</h2>-->
+<!--                <a th:href="@{/reservasi/add}" class="btn style3">Reservasi Sekarang</a>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      &lt;!&ndash; Promo Video End &ndash;&gt;-->
+
+<!--      &lt;!&ndash; Product Section Start &ndash;&gt;-->
+<!--      <section class="product-wrap ptb-100">-->
+<!--        <div class="container">-->
+<!--          <div class="section-title style1 text-center mb-30">-->
+<!--            <span>Our Products</span>-->
+<!--            <h2>Choose The Perfect Gifts</h2>-->
+<!--          </div>-->
+<!--          <div class="row justify-content-center">-->
+<!--            <div class="col-xl-4 col-lg-6 col-md-6">-->
+<!--              <div class="product-card style2">-->
+<!--                <div class="product-img">-->
+<!--                  <img src="/assets/img/product/product-10.png" alt="Image">-->
+<!--                  <ul class="product-option list-style">-->
+<!--                    <li><a href="wishlist.html"><i class="ri-heart-line"></i></a></li>-->
+<!--                    <li><a href="cart.html"><i class="ri-shopping-cart-line"></i></a></li>-->
+<!--                    <li><button type="button"><i class="ri-eye-line"></i></button></li>-->
+<!--                  </ul>-->
+<!--                </div>-->
+<!--                <div class="product-info">-->
+<!--                  <ul class="ratings list-style">-->
+<!--                    <li><i class="ri-star-fill"></i></li>-->
+<!--                    <li><i class="ri-star-fill"></i></li>-->
+<!--                    <li><i class="ri-star-fill"></i></li>-->
+<!--                    <li><i class="ri-star-fill"></i></li>-->
+<!--                    <li><i class="ri-star-fill"></i></li>-->
+<!--                  </ul>-->
+<!--                  <p class="product-price">$250.00 <span class="discount"> $330.00</span></p>-->
+<!--                  <h3><a href="shop-details.html">Blue Wedding Dress</a></h3>-->
+<!--                  <p>Consec adipicing elit debit ipsam ...</p>-->
+<!--                  <a href="cart.html" class="btn style1">Add To Cart</a>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="col-xl-4 col-lg-6 col-md-6">-->
+<!--              <div class="product-card style2">-->
+<!--                <div class="product-img">-->
+<!--                  <img src="/assets/img/product/product-11.png" alt="Image">-->
+<!--                  <ul class="product-option list-style">-->
+<!--                    <li><a href="wishlist.html"><i class="ri-heart-line"></i></a></li>-->
+<!--                    <li><a href="cart.html"><i class="ri-shopping-cart-line"></i></a></li>-->
+<!--                    <li><button type="button"><i class="ri-eye-line"></i></button></li>-->
+<!--                  </ul>-->
+<!--                </div>-->
+<!--                <div class="product-info">-->
+<!--                  <ul class="ratings list-style">-->
+<!--                    <li><i class="ri-star-fill"></i></li>-->
+<!--                    <li><i class="ri-star-fill"></i></li>-->
+<!--                    <li><i class="ri-star-fill"></i></li>-->
+<!--                    <li><i class="ri-star-fill"></i></li>-->
+<!--                    <li><i class="ri-star-fill"></i></li>-->
+<!--                  </ul>-->
+<!--                  <p class="product-price">$170.00 <span class="discount"> $210.00</span></p>-->
+<!--                  <h3><a href="shop-details.html">Flower Decoration</a></h3>-->
+<!--                  <p>Consec adipicing elit debit ipsam ...</p>-->
+<!--                  <a href="cart.html" class="btn style1">Add To Cart</a>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="col-xl-4 col-lg-6 col-md-6">-->
+<!--              <div class="product-card style2">-->
+<!--                <div class="product-img">-->
+<!--                  <img src="/assets/img/product/product-9.png" alt="Image">-->
+<!--                  <ul class="product-option list-style">-->
+<!--                    <li><a href="wishlist.html"><i class="ri-heart-line"></i></a></li>-->
+<!--                    <li><a href="cart.html"><i class="ri-shopping-cart-line"></i></a></li>-->
+<!--                    <li><button type="button"><i class="ri-eye-line"></i></button></li>-->
+<!--                  </ul>-->
+<!--                </div>-->
+<!--                <div class="product-info">-->
+<!--                  <ul class="ratings list-style">-->
+<!--                    <li><i class="ri-star-fill"></i></li>-->
+<!--                    <li><i class="ri-star-fill"></i></li>-->
+<!--                    <li><i class="ri-star-fill"></i></li>-->
+<!--                    <li><i class="ri-star-fill"></i></li>-->
+<!--                    <li><i class="ri-star-fill"></i></li>-->
+<!--                  </ul>-->
+<!--                  <p class="product-price">$310.00 <span class="discount"> $330.00</span></p>-->
+<!--                  <h3><a href="shop-details.html">White Bridal Dress</a></h3>-->
+<!--                  <p>Consec adipicing elit debit ipsam ...</p>-->
+<!--                  <a href="cart.html" class="btn style1">Add To Cart</a>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="row align-items-center pt-75">-->
+<!--            <div class="col-lg-4 col-md-5">-->
+<!--              <h5  class="subtitle">Our Trusted Branding Partners</h5>-->
+<!--            </div>-->
+<!--            <div class="col-lg-8 col-md-7">-->
+<!--              <div class="partner-slider owl-carousel">-->
+<!--                <div class="partner-item">-->
+<!--                  <img src="/assets/img/pricing/partner-1.png" alt="Image">-->
+<!--                </div>-->
+<!--                <div class="partner-item">-->
+<!--                  <img src="/assets/img/pricing/partner-2.png" alt="Image">-->
+<!--                </div>-->
+<!--                <div class="partner-item">-->
+<!--                  <img src="/assets/img/pricing/partner-3.png" alt="Image">-->
+<!--                </div>-->
+<!--                <div class="partner-item">-->
+<!--                  <img src="/assets/img/pricing/partner-4.png" alt="Image">-->
+<!--                </div>-->
+<!--                <div class="partner-item">-->
+<!--                  <img src="/assets/img/pricing/partner-5.png" alt="Image">-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </section>-->
+<!--      &lt;!&ndash; Product Section End &ndash;&gt;-->
+
+      <!-- Testimonial Section Start -->
+      <section class="testimonial-wrap style2 ptb-100 bg-selago">
+        <div class="container">
+          <div class="section-title style1 text-center mb-30">
+            <span>Our Testimonial</span>
+            <h2>Our Client's Feedback</h2>
+          </div>
+          <div class="testimonial-slider-one style2 owl-carousel">
+            <div class="testimonial-card style2">
+              <div class="client-img">
+                <img src="/assets/img/clients/client-1.jpg" alt="Image">
+              </div>
+              <div class="client-info-area">
+                <div class="client-info-wrap">
+                  <div class="client-info">
+                    <h3>Donor Kimon</h3>
+                    <span>Director, BAT</span>
+                  </div>
+                  <ul class="ratings list-style">
+                    <li><i class="ri-star-fill"></i></li>
+                    <li><i class="ri-star-fill"></i></li>
+                    <li><i class="ri-star-fill"></i></li>
+                    <li><i class="ri-star-fill"></i></li>
+                    <li><i class="ri-star-fill"></i></li>
+                  </ul>
+                </div>
+                <p class="client-quote">“Lorem Ipsum available but the majority have suffered alteration in some form by injected humour or randomised words which don't look even slightly believable if you are going to a passage lorem Ipsum, you need be sure.”</p>
+              </div>
+            </div>
+            <div class="testimonial-card style2">
+              <div class="client-img">
+                <img src="/assets/img/clients/client-2.jpg" alt="Image">
+              </div>
+              <div class="client-info-area">
+                <div class="client-info-wrap">
+                  <div class="client-info">
+                    <h3>Alexa Cruis</h3>
+                    <span>CEO, IBAC</span>
+                  </div>
+                  <ul class="ratings list-style">
+                    <li><i class="ri-star-fill"></i></li>
+                    <li><i class="ri-star-fill"></i></li>
+                    <li><i class="ri-star-fill"></i></li>
+                    <li><i class="ri-star-fill"></i></li>
+                    <li><i class="ri-star-fill"></i></li>
+                  </ul>
+                </div>
+                <p class="client-quote">“Lorem Ipsum available but the majority have suffered alteration in some form by injected humour or randomised words which don't look even slightly believable if you are going to a passage lorem Ipsum, you need be sure.”</p>
+              </div>
+            </div>
+            <div class="testimonial-card style2">
+              <div class="client-img">
+                <img src="/assets/img/clients/client-3.jpg" alt="Image">
+              </div>
+              <div class="client-info-area">
+                <div class="client-info-wrap">
+                  <div class="client-info">
+                    <h3>Tom Haris</h3>
+                    <span>Engineer, Olleo</span>
+                  </div>
+                  <ul class="ratings list-style">
+                    <li><i class="ri-star-fill"></i></li>
+                    <li><i class="ri-star-fill"></i></li>
+                    <li><i class="ri-star-fill"></i></li>
+                    <li><i class="ri-star-fill"></i></li>
+                    <li><i class="ri-star-fill"></i></li>
+                  </ul>
+                </div>
+                <p class="client-quote">“Lorem Ipsum available but the majority have suffered alteration in some form by injected humour or randomised words which don't look even slightly believable if you are going to a passage lorem Ipsum, you need be sure.”</p>
+              </div>
+            </div>
+            <div class="testimonial-card style2">
+              <div class="client-img">
+                <img src="/assets/img/clients/client-4.jpg" alt="Image">
+              </div>
+              <div class="client-info-area">
+                <div class="client-info-wrap">
+                  <div class="client-info">
+                    <h3>Harry Jackson</h3>
+                    <span>Enterpreneur</span>
+                  </div>
+                  <ul class="ratings list-style">
+                    <li><i class="ri-star-fill"></i></li>
+                    <li><i class="ri-star-fill"></i></li>
+                    <li><i class="ri-star-fill"></i></li>
+                    <li><i class="ri-star-fill"></i></li>
+                    <li><i class="ri-star-fill"></i></li>
+                  </ul>
+                </div>
+                <p class="client-quote">“Lorem Ipsum available but the majority have suffered alteration in some form by injected humour or randomised words which don't look even slightly believable if you are going to a passage lorem Ipsum, you need be sure.”</p>
+              </div>
+            </div>
+            <div class="testimonial-card style2">
+              <div class="client-img">
+                <img src="/assets/img/clients/client-5.jpg" alt="Image">
+              </div>
+              <div class="client-info-area">
+                <div class="client-info-wrap">
+                  <div class="client-info">
+                    <h3>Chris Haris</h3>
+                    <span>MD, ITec</span>
+                  </div>
+                  <ul class="ratings list-style">
+                    <li><i class="ri-star-fill"></i></li>
+                    <li><i class="ri-star-fill"></i></li>
+                    <li><i class="ri-star-fill"></i></li>
+                    <li><i class="ri-star-fill"></i></li>
+                    <li><i class="ri-star-fill"></i></li>
+                  </ul>
+                </div>
+                <p class="client-quote">“Lorem Ipsum available but the majority have suffered alteration in some form by injected humour or randomised words which don't look even slightly believable if you are going to a passage lorem Ipsum, you need be sure.”</p>
+              </div>
+            </div>
+            <div class="testimonial-card style2">
+              <div class="client-img">
+                <img src="/assets/img/clients/client-6.jpg" alt="Image">
+              </div>
+              <div class="client-info-area">
+                <div class="client-info-wrap">
+                  <div class="client-info">
+                    <h3>Steve Hanks</h3>
+                    <span>Enterprenaur</span>
+                  </div>
+                  <ul class="ratings list-style">
+                    <li><i class="ri-star-fill"></i></li>
+                    <li><i class="ri-star-fill"></i></li>
+                    <li><i class="ri-star-fill"></i></li>
+                    <li><i class="ri-star-fill"></i></li>
+                    <li><i class="ri-star-fill"></i></li>
+                  </ul>
+                </div>
+                <p class="client-quote">“Lorem Ipsum available but the majority have suffered alteration in some form by injected humour or randomised words which don't look even slightly believable if you are going to a passage lorem Ipsum, you need be sure.”</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Testimonial Section End -->
+
+<!--      &lt;!&ndash; Appointment Section start &ndash;&gt;-->
+<!--      <section class="appointment-wrap style2 ptb-100">-->
+<!--        <div class="container">-->
+<!--          <div class="row align-items-center gx-5">-->
+<!--            <div class="col-lg-6"  data-aos="fade-right" data-aos-duration="1200" data-aos-delay="200">-->
+<!--              <div class="appoint-img-wrap">-->
+<!--                <a class="insta-item" data-fancybox="gallery" href="/assets/img/instagram/insta-9.jpg">-->
+<!--                  <img src="/assets/img/instagram/insta-9.jpg" alt="Image">-->
+<!--                  <span><i class="ri-instagram-line"></i></span>-->
+<!--                </a>-->
+<!--                <a class="insta-item" data-fancybox="gallery" href="/assets/img/instagram/insta-10.jpg">-->
+<!--                  <img src="/assets/img/instagram/insta-10.jpg" alt="Image">-->
+<!--                  <span><i class="ri-instagram-line"></i></span>-->
+<!--                </a>-->
+<!--                <a class="insta-item" data-fancybox="gallery" href="/assets/img/instagram/insta-11.jpg">-->
+<!--                  <img src="/assets/img/instagram/insta-11.jpg" alt="Image">-->
+<!--                  <span><i class="ri-instagram-line"></i></span>-->
+<!--                </a>-->
+<!--                <a class="insta-item" data-fancybox="gallery" href="/assets/img/instagram/insta-12.jpg">-->
+<!--                  <img src="/assets/img/instagram/insta-12.jpg" alt="Image">-->
+<!--                  <span><i class="ri-instagram-line"></i></span>-->
+<!--                </a>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">-->
+<!--              <div class="appointment-content">-->
+<!--                <div class="content-title style1">-->
+<!--                  <span>For Your Service</span>-->
+<!--                  <h2>We Determined To Live Together In Every Single Moment</h2>-->
+<!--                </div>-->
+<!--                <form action="#" class="appointment-form">-->
+<!--                  <div class="row">-->
+<!--                    <div class="col-md-6">-->
+<!--                      <div class="form-group">-->
+<!--                        <input type="text" placeholder="Your Name">-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-6">-->
+<!--                      <div class="form-group">-->
+<!--                        <input type="text" placeholder="Your Email">-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-6">-->
+<!--                      <div class="form-group">-->
+<!--                        <input type="text" placeholder="Phone Number">-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-6">-->
+<!--                      <div class="form-group">-->
+<!--                        <input type="text" placeholder="Religion">-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-6">-->
+<!--                      <div class="form-group">-->
+<!--                        <input type="text" placeholder="Enter Date" onfocus="(this.type='date')" onblur="(this.type='text')">-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-6">-->
+<!--                      <div class="form-group">-->
+<!--                        <input type="text" placeholder="Address">-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-12">-->
+<!--                      <div class="form-group">-->
+<!--                        <textarea name="Your Message" id="msg" cols="30" rows="10" placeholder="Your Message"></textarea>-->
+<!--                      </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-md-6">-->
+<!--                      <button type="submit" class="btn style1">Book Now</button>-->
+<!--                    </div>-->
+<!--                  </div>-->
+<!--                </form>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </section>-->
+<!--      &lt;!&ndash; Appointment Section End &ndash;&gt;-->
+
+    <nav th:replace="fragments/footer"></nav>
+
+    </div>
+    <!-- Page Wrapper End -->
+
+    <!-- Back-to-top button Start -->
+    <div class="paginacontainer">
+      <div class="progress-wrap bounce">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+          <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+        </svg>
+      </div>
+    </div>
+    <!-- Back-to-top button End -->
+
+    <!-- Link of JS files -->
+    <script th:src="@{/assets/js/jquery.min.js}"></script>
+    <script th:src="@{/assets/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/assets/js/form-validator.min.js}"></script>
+    <script th:src="@{/assets/js/contact-form-script.js}"></script>
+    <script th:src="@{/assets/js/aos.js}"></script>
+    <script th:src="@{/assets/js/owl.carousel.min.js}"></script>
+    <script th:src="@{/assets/js/odometer.min.js}"></script>
+    <script th:src="@{/assets/js/fancybox.js}"></script>
+    <script th:src="@{/assets/js/jquery.appear.js}"></script>
+    <script th:src="@{/assets/js/tweenmax.min.js}"></script>
+    <script th:src="@{/assets/js/main.js}"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Link of CSS files -->
+    <link rel="stylesheet" th:href="@{/assets/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/flaticon.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/remixicon.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/ionicons.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/owl.carousel.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/odometer.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/fancybox.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/aos.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/style.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/responsive.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/dark-theme.css}">
+    <title>Daftar Pemesan Layanan</title>
+    <link rel="icon" type="image/png" th:href="@{/assets/img/favicon.png}">
+</head>
+<body>
+<nav th:replace="fragments/fragment :: navbar('Profil')"></nav>
+
+<!--Preloader starts-->
+<div class="loader js-preloader">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+<!--Preloader ends-->
+
+<!-- Theme Switcher Start -->
+<div class="switch-theme-mode">
+    <label id="switch" class="switch">
+        <input type="checkbox" onchange="toggleTheme()" id="slider">
+        <span class="slider round"></span>
+    </label>
+</div>
+<!-- Theme Switcher End -->
+
+<!-- Page Wrapper End -->
+<div class="page-wrapper">
+    <!-- Content Wrapper Start -->
+    <div class="content-wrapper">
+
+        <!-- Breadcrumb Start -->
+        <div class="breadcrumb-wrap">
+            <div class="container">
+                <img src="/assets/img/shape-7.png" alt="Image" class="br-shape-one">
+                <img src="/assets/img/shape-8.png" alt="Image" class="br-shape-two">
+                <img src="/assets/img/shape-7.png" alt="Image" class="br-shape-three">
+                <img src="/assets/img/shape-8.png" alt="Image" class="br-shape-four">
+                <div class="breadcrumb-title">
+                    <h2>Daftar Pemesan Layanan</h2>
+                    <ul class="breadcrumb-menu list-style">
+                        <li><a href="/">Beranda </a></li>
+                        <li>Daftar Pemesan Layanan</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Breadcrumb End -->
+
+        <!-- Cart section start -->
+        <div class="cart-wrap ptb-100">
+            <div class="container">
+                <div class="row gx-5">
+                    <div class="col-xl-12">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="cart-table ">
+                                    <table class="table">
+
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">ID Reservasi</th>
+                                            <th scope="col">Nama Customer</th>
+                                            <th scope="col">Tanggal</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                        </thead>
+
+                                        <tbody>
+                                        <tr th:each="reservasi, iterationStatus : ${listReservasiVendor}">
+                                            <td style="text-align: center">
+                                                <span th:text="${reservasi.idReservasi}"></span>
+                                            </td>
+                                            <td>
+                                                <span th:text="${reservasi.customer.nama}"></span>
+                                            </td>
+                                            <td>
+                                                <span th:text="${#temporals.format(reservasi.tanggal, 'dd MMMM yyyy')}"></span>
+                                            </td>
+                                            <td th:switch="${reservasi.status}">
+                                                <span th:case="1" th:text="'Softbook'"></span>
+                                                <span th:case="2" th:text="'Down Payment 1'"></span>
+                                                <span th:case="3" th:text="'Down Payment 2'"></span>
+                                                <span th:case="4" th:text="'Fully Paid'"></span>
+                                            </td>
+
+                                            <td>
+                                                <a  th:href="@{/reservasi/reservasi-for-vendor/} + ${reservasi.idReservasi}" class="btn style1">Detail</a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Cart section end -->
+
+    </div>
+    <!-- Content Wrapper End -->
+
+    <!-- Footer Section Start -->
+    <footer class="footer-wrap">
+        <div class="container">
+            <div class="row pt-100 pb-75">
+                <div class="col-xl-3 col-lg-5 col-md-5 col-sm-12">
+                    <div class="footer-widget">
+                        <a href="index.html" class="footer-logo">
+                            <img src="/assets/img/logo-white.png" alt="Image">
+                        </a>
+                        <p class="comp-desc">
+                            Lorem ipsum dolor sit amet consec tetur adipiscing elit eiusmod tempor incidunt labore dolore magna aliqua consec tetur elite sed do labor.
+                        </p>
+                        <div class="social-link">
+                            <h6>Follow Us :</h6>
+                            <ul class="social-profile style1 list-style">
+                                <li>
+                                    <a href="https://facebook.com">
+                                        <i class="ri-facebook-fill"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com">
+                                        <i class="ri-twitter-fill"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://instagram.com">
+                                        <i class="ri-instagram-line"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-4 col-md-3 col-sm-6 ps-xxl-5 ps-xl-4">
+                    <div class="footer-widget">
+                        <h3 class="footer-widget-title">Service Links</h3>
+                        <ul class="footer-menu list-style">
+                            <li>
+                                <a href="index.html">
+                                    <i class="ri-arrow-right-s-line"></i>
+                                    Home
+                                </a>
+                            </li>
+                            <li>
+                                <a href="service-one.html">
+                                    <i class="ri-arrow-right-s-line"></i>
+                                    Services
+                                </a>
+                            </li>
+                            <li>
+                                <a href="about.html">
+                                    <i class="ri-arrow-right-s-line"></i>
+                                    About Us
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="testimonials.html">
+                                    <i class="ri-arrow-right-s-line"></i>
+                                    Testimonials
+                                </a>
+                            </li>
+                            <li>
+                                <a href="team.html">
+                                    <i class="ri-arrow-right-s-line"></i>
+                                    Our Team
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 ps-xxl-4">
+                    <div class="footer-widget">
+                        <h3 class="footer-widget-title">Important Links</h3>
+                        <ul class="footer-menu list-style">
+                            <li>
+                                <a href="shop-left-sidebar.html">
+                                    <i class="ri-arrow-right-s-line"></i>
+                                    Our Products
+                                </a>
+                            </li>
+                            <li>
+                                <a href="contact.html">
+                                    <i class="ri-arrow-right-s-line"></i>
+                                    Contact
+                                </a>
+                            </li>
+                            <li>
+                                <a href="appointment.html">
+                                    <i class="ri-arrow-right-s-line"></i>
+                                    Appointment
+                                </a>
+                            </li>
+                            <li>
+                                <a href="terms-of-service.html">
+                                    <i class="ri-arrow-right-s-line"></i>
+                                    Terms &amp; Conditions
+                                </a>
+                            </li>
+                            <li>
+                                <a href="faq.html">
+                                    <i class="ri-arrow-right-s-line"></i>
+                                    FAQ
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-5 col-md-6 col-sm-6 ps-xxl-5 ps-xl-4">
+                    <div class="footer-widget">
+                        <h3 class="footer-widget-title">Quick Links</h3>
+                        <ul class="footer-menu list-style">
+                            <li>
+                                <a href="privacy-policy.html">
+                                    <i class="ri-arrow-right-s-line"></i>
+                                    Privacy Policy
+                                </a>
+                            </li>
+                            <li>
+                                <a href="pricing-plan.html">
+                                    <i class="ri-arrow-right-s-line"></i>
+                                    Pricing
+                                </a>
+                            </li>
+                            <li>
+                                <a href="project.html">
+                                    <i class="ri-arrow-right-s-line"></i>
+                                    Our Success
+                                </a>
+                            </li>
+                            <li>
+                                <a href="blog-left-sidebar.html">
+                                    <i class="ri-arrow-right-s-line"></i>
+                                    Blog
+                                </a>
+                            </li>
+                            <li>
+                                <a href="login.html">
+                                    <i class="ri-arrow-right-s-line"></i>
+                                    Login
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-7 col-md-6 col-sm-6 ps-xxl-5">
+                    <div class="footer-widget">
+                        <h3 class="footer-widget-title">Official Info</h3>
+                        <ul class="contact-info list-style">
+                            <li>
+                                <i class="ri-map-pin-fill"></i>
+                                <h6>Location</h6>
+                                <p>2976 Sunrise Road, Las Vegas</p>
+                            </li>
+                            <li>
+                                <i class="ri-mail-fill"></i>
+                                <h6>Email</h6>
+                                <a href="mailto:hello@wazo.com">hello@wazo.com</a>
+                            </li>
+                            <li>
+                                <i class="ri-phone-fill"></i>
+                                <h6>Phone</h6>
+                                <a href="tel:13454567877">+1-3454-5678-77</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="copyright-text"><i class="ri-copyright-line"></i><span>Wazo</span> is proudly owned by <a href="https://hibotheme.com/">HiboTheme</a></p>
+    </footer>
+    <!-- Footer Section End -->
+
+</div>
+<!-- Page Wrapper End -->
+
+<!-- Back-to-top button Start -->
+<div class="paginacontainer">
+    <div class="progress-wrap bounce">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+        </svg>
+    </div>
+</div>
+<!-- Back-to-top button End -->
+
+<!-- Link of JS files -->
+<script>
+    var searchbar = document.getElementById('searchbar');
+    var category = document.getElementById('category');
+    var tbody = document.getElementById('tbody1');
+    var originaltabledata = tbody.innerHTML;
+
+    function search(){
+        tbody.innerHTML = originaltabledata;
+        let rows = tbody.children;
+
+        if(searchbar.value.length < 1 || category.value == '0'){
+            return;
+        }
+
+        let filteredrows = '';
+        let catno = Number(category.value) -1;
+        let searchtext = searchbar.value.toLowerCase();
+
+        for (let i = 0; i <rows.length; i++){
+            const currentrowtext = rows[i].children[catno].innerText.toLowerCase();
+
+            if (currentrowtext.indexOf(searchtext) >-1){
+                filteredrows += rows[i].outerHTML;
+            }
+        }
+        tbody.innerHTML = filteredrows;
+    }
+    searchbar.addEventListener('input', search);
+</script>
+<script th:src="@{/assets/js/jquery.min.js}"></script>
+<script th:src="@{/assets/js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/assets/js/form-validator.min.js}"></script>
+<script th:src="@{/assets/js/contact-form-script.js}"></script>
+<script th:src="@{/assets/js/aos.js}"></script>
+<script th:src="@{/assets/js/owl.carousel.min.js}"></script>
+<script th:src="@{/assets/js/odometer.min.js}"></script>
+<script th:src="@{/assets/js/fancybox.js}"></script>
+<script th:src="@{/assets/js/jquery.appear.js}"></script>
+<script th:src="@{/assets/js/tweenmax.min.js}"></script>
+<script th:src="@{/assets/js/main.js}"></script>
+
+</body>
+</html>

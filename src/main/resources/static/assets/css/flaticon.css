@@ -1,0 +1,251 @@
+@font-face {
+    font-family: "flaticon";
+    src: url("../fonts/flaticon.ttf?0bed0190fd2c7e93e903a121c5c2b170") format("truetype"),
+url("../fonts/flaticon.woff?0bed0190fd2c7e93e903a121c5c2b170") format("woff"),
+url("../fonts/flaticon.woff2?0bed0190fd2c7e93e903a121c5c2b170") format("woff2"),
+url("../fonts/flaticon.eot?0bed0190fd2c7e93e903a121c5c2b170#iefix") format("embedded-opentype"),
+url("../fonts/flaticon.svg?0bed0190fd2c7e93e903a121c5c2b170#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-placeholder:before {
+    content: "\f101";
+}
+.flaticon-pastor:before {
+    content: "\f102";
+}
+.flaticon-wedding-arch:before {
+    content: "\f103";
+}
+.flaticon-wedding-rings:before {
+    content: "\f104";
+}
+.flaticon-wedding-invitation:before {
+    content: "\f105";
+}
+.flaticon-wedding-card:before {
+    content: "\f106";
+}
+.flaticon-wedding-dress:before {
+    content: "\f107";
+}
+.flaticon-flower-bouquet:before {
+    content: "\f108";
+}
+.flaticon-cheers:before {
+    content: "\f109";
+}
+.flaticon-wedding-suit:before {
+    content: "\f10a";
+}
+.flaticon-groom:before {
+    content: "\f10b";
+}
+.flaticon-bow:before {
+    content: "\f10c";
+}
+.flaticon-disco-ball:before {
+    content: "\f10d";
+}
+.flaticon-dove:before {
+    content: "\f10e";
+}
+.flaticon-do-not-disturb:before {
+    content: "\f10f";
+}
+.flaticon-hand:before {
+    content: "\f110";
+}
+.flaticon-bible:before {
+    content: "\f111";
+}
+.flaticon-musical-note:before {
+    content: "\f112";
+}
+.flaticon-gramophone:before {
+    content: "\f113";
+}
+.flaticon-heart:before {
+    content: "\f114";
+}
+.flaticon-dj-mixer:before {
+    content: "\f115";
+}
+.flaticon-left-arrow:before {
+    content: "\f116";
+}
+.flaticon-right:before {
+    content: "\f117";
+}
+.flaticon-up-and-down:before {
+    content: "\f118";
+}
+.flaticon-cupcake:before {
+    content: "\f119";
+}
+.flaticon-letter:before {
+    content: "\f11a";
+}
+.flaticon-candle:before {
+    content: "\f11b";
+}
+.flaticon-champagne:before {
+    content: "\f11c";
+}
+.flaticon-wedding-photos:before {
+    content: "\f11d";
+}
+.flaticon-video-camera:before {
+    content: "\f11e";
+}
+.flaticon-lips:before {
+    content: "\f11f";
+}
+.flaticon-champagne-1:before {
+    content: "\f120";
+}
+.flaticon-makeup:before {
+    content: "\f121";
+}
+.flaticon-double-bed:before {
+    content: "\f122";
+}
+.flaticon-gift:before {
+    content: "\f123";
+}
+.flaticon-garland:before {
+    content: "\f124";
+}
+.flaticon-high-heels:before {
+    content: "\f125";
+}
+.flaticon-fireworks:before {
+    content: "\f126";
+}
+.flaticon-bride:before {
+    content: "\f127";
+}
+.flaticon-quote:before {
+    content: "\f128";
+}
+.flaticon-love:before {
+    content: "\f129";
+}
+.flaticon-bag:before {
+    content: "\f12a";
+}
+.flaticon-left-arrow-1:before {
+    content: "\f12b";
+}
+.flaticon-shopping-bag:before {
+    content: "\f12c";
+}
+.flaticon-facebook:before {
+    content: "\f12d";
+}
+.flaticon-clock:before {
+    content: "\f12e";
+}
+.flaticon-left-arrow-2:before {
+    content: "\f12f";
+}
+.flaticon-twitter:before {
+    content: "\f130";
+}
+.flaticon-instagram:before {
+    content: "\f131";
+}
+.flaticon-left-arrow-3:before {
+    content: "\f132";
+}
+.flaticon-view:before {
+    content: "\f133";
+}
+.flaticon-next:before {
+    content: "\f134";
+}
+.flaticon-right-arrow:before {
+    content: "\f135";
+}
+.flaticon-placeholder-1:before {
+    content: "\f136";
+}
+.flaticon-right-arrow-1:before {
+    content: "\f137";
+}
+.flaticon-left-arrow-4:before {
+    content: "\f138";
+}
+.flaticon-shopping-bag-1:before {
+    content: "\f139";
+}
+.flaticon-right-arrow-2:before {
+    content: "\f13a";
+}
+.flaticon-church:before {
+    content: "\f13b";
+}
+.flaticon-heart-1:before {
+    content: "\f13c";
+}
+.flaticon-smartphone:before {
+    content: "\f13d";
+}
+.flaticon-camera:before {
+    content: "\f13e";
+}
+.flaticon-padlock:before {
+    content: "\f13f";
+}
+.flaticon-wedding-car:before {
+    content: "\f140";
+}
+.flaticon-suitcase:before {
+    content: "\f141";
+}
+.flaticon-calendar:before {
+    content: "\f142";
+}
+.flaticon-wedding-certificate:before {
+    content: "\f143";
+}
+.flaticon-wedding-cake:before {
+    content: "\f144";
+}
+.flaticon-straight-quotes:before {
+    content: "\f145";
+}
+.flaticon-balloon:before {
+    content: "\f146";
+}
+.flaticon-wedding-invitation-1:before {
+    content: "\f147";
+}
+.flaticon-wedding-bells:before {
+    content: "\f148";
+}
+.flaticon-wedding-ring:before {
+    content: "\f149";
+}
+.flaticon-linkedin:before {
+    content: "\f14a";
+}
+.flaticon-arrow:before {
+    content: "\f14b";
+}
+.flaticon-phone-call:before {
+    content: "\f14c";
+}
+.flaticon-right-arrow-3:before {
+    content: "\f14d";
+}

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Link of CSS files -->
+  <link rel="stylesheet" th:href="@{/assets/css/bootstrap.min.css}">
+  <link rel="stylesheet" th:href="@{/assets/css/flaticon.css}">
+  <link rel="stylesheet" th:href="@{/assets/css/remixicon.css}">
+  <link rel="stylesheet" th:href="@{/assets/css/ionicons.min.css}">
+  <link rel="stylesheet" th:href="@{/assets/css/owl.carousel.min.css}">
+  <link rel="stylesheet" th:href="@{/assets/css/odometer.min.css}">
+  <link rel="stylesheet" th:href="@{/assets/css/fancybox.css}">
+  <link rel="stylesheet" th:href="@{/assets/css/aos.css}">
+  <link rel="stylesheet" th:href="@{/assets/css/style.css}">
+  <link rel="stylesheet" th:href="@{/assets/css/responsive.css}">
+  <link rel="stylesheet" th:href="@{/assets/css/dark-theme.css}">
+  <title>Grafik</title>
+  <link rel="icon" type="image/png" th:href="@{/assets/img/favicon.png}">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<nav th:replace="fragments/fragment"></nav>
+
+
+<!--Preloader starts-->
+<div class="loader js-preloader">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+<!--Preloader ends-->
+
+<!-- Theme Switcher Start -->
+<div class="switch-theme-mode">
+  <label id="switch" class="switch">
+    <input type="checkbox" onchange="toggleTheme()" id="slider">
+    <span class="slider round"></span>
+  </label>
+</div>
+<!-- Theme Switcher End -->
+
+<!-- Page Wrapper End -->
+<div class="page-wrapper">
+  <!-- Content Wrapper Start -->
+  <div class="content-wrapper">
+
+    <!-- Breadcrumb Start -->
+    <div class="breadcrumb-wrap">
+      <div class="container">
+        <img src="/assets/img/shape-7.png" alt="Image" class="br-shape-one">
+        <img src="/assets/img/shape-8.png" alt="Image" class="br-shape-two">
+        <img src="/assets/img/shape-7.png" alt="Image" class="br-shape-three">
+        <img src="/assets/img/shape-8.png" alt="Image" class="br-shape-four">
+        <div class="breadcrumb-title">
+          <h2>Grafik Reservasi (Fully Paid)</h2>
+          <ul class="breadcrumb-menu list-style">
+            <li><a href="/">Beranda </a></li>
+            <li>Grafik Reservasi (Fully Paid)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <!-- Account Section start -->
+    <section class="Login-wrap pt-100 pb-75">
+      <div class="container">
+        <div class="row gx-5">
+          <div class="col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
+            <div class="login-form-wrap">
+
+              <div class="login-header">
+                <h3>Grafik Tahunan</h3>
+              </div>
+
+              <div class="col-lg-12">
+                <div class="form-group">
+                  <select id="year" class="select-year" required>
+                    <option value="" >Pilih Tahun</option>
+                    <option th:each="year : ${years}" th:value="${year}" th:text="${year}"></option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="col-lg-12 mt-25" style="text-align: center">
+                <div class="form-group mb-0">
+                  <button onclick="showChart()" class="btn style1">Tampilkan Chart</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Account Section end -->
+
+    <div class="container">
+      <div class="chart-container">
+        <canvas id="combinedChart" width="100" height="50"></canvas>
+      </div>
+    </div>
+
+    <!-- Chart Code -->
+
+    <br><br>
+
+    <!-- Product Info Start -->
+    <section class="product-info-wrap bg-mystic ptb-100">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-10 offset-xl-1">
+
+            <ul class="nav nav-tabs product-tablist" role="tablist">
+              <li class="nav-item">
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab_2"
+                        type="button" role="tab">Informasi Tambahan</button>
+              </li>
+            </ul>
+
+            <div class="tab-content product-tab-content">
+              <div class="tab-pane fade show active" id="tab_2" role="tabpanel">
+                <ul class="product_features list-style">
+
+                  <li><b>Total Seluruh Reservasi : </b> <span th:text="${totalReservasi} +  ' Reservasi'"></span></li>
+                  <li><b>SoftBook : </b> <span th:text="${totalReservasiSoftbook}"></span> </li>
+                  <li><b>Down Payment 1 : </b> <span th:text="${totalReservasiDP1}"></span> </li>
+                  <li><b>Down Payment 2 : </b> <span th:text="${totalReservasiDP2}"></span> </li>
+                  <li><b>Fully Paid : </b> <span th:text="${totalReservasiPaid}"></span> </li>
+                  <li><b>Tahun Reservasi Selesai : </b>
+                    <span th:each="year : ${years}" th:value="${year}" th:text="${year} + ' ' "></span>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Product Info End -->
+
+    <nav th:replace="fragments/footer"></nav>
+
+  </div>
+</div>
+<!-- Page Wrapper End -->
+
+<!-- Back-to-top button Start -->
+<div class="paginacontainer">
+  <div class="progress-wrap bounce">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+    </svg>
+  </div>
+</div>
+<!-- Back-to-top button End -->
+
+<script th:inline="javascript">
+  var chart;
+  var data = /*[[${data}]]*/ {};
+
+  function createCombinedChart(year) {
+    if (chart) {
+      chart.destroy();
+    }
+
+    var yearData = data[year];
+
+    var ctx = document.getElementById('combinedChart').getContext('2d');
+    chart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        datasets: [
+          {
+            label: 'Jumlah Reservasi Per Bulannya (Bar Chart)',
+            data: yearData,
+            backgroundColor: 'rgba(75, 192, 192, 0.8)'
+          },
+        ]
+      },
+      options: {
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: 'Bulan'
+            }
+          },
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Total Reservasi'
+            }
+          }
+        }
+      }
+    });
+  }
+
+  function showChart() {
+    var yearSelect = document.getElementById('year');
+    var selectedYear = yearSelect.value;
+
+    if (selectedYear in data) {
+      createCombinedChart(selectedYear);
+    } else {
+      alert("Mohon pilih tahun yang tersedia !!");
+    }
+  }
+
+  // Initial chart creation
+  createCombinedChart('1500');
+</script>
+
+
+<!-- Link of JS files -->
+<script th:src="@{/assets/js/jquery.min.js}"></script>
+<script th:src="@{/assets/js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/assets/js/form-validator.min.js}"></script>
+<script th:src="@{/assets/js/contact-form-script.js}"></script>
+<script th:src="@{/assets/js/aos.js}"></script>
+<script th:src="@{/assets/js/owl.carousel.min.js}"></script>
+<script th:src="@{/assets/js/odometer.min.js}"></script>
+<script th:src="@{/assets/js/fancybox.js}"></script>
+<script th:src="@{/assets/js/jquery.appear.js}"></script>
+<script th:src="@{/assets/js/tweenmax.min.js}"></script>
+<script th:src="@{/assets/js/main.js}"></script>
+
+</body>
+</html>

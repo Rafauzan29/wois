@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Link of CSS files -->
+    <link rel="stylesheet" th:href="@{/assets/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/flaticon.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/remixicon.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/ionicons.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/owl.carousel.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/odometer.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/fancybox.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/aos.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/style.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/responsive.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/dark-theme.css}">
+
+    <link rel="icon" type="image/png" th:href="@{/assets/img/favicon.png}">
+</head>
+
+<nav th:fragment="footer(page)" >
+<!-- Footer Section Start -->
+<footer class="footer-wrap">
+    <div class="container">
+        <div class="row pt-100 pb-75">
+            <div class="col-xl-3 col-lg-5 col-md-5 col-sm-12">
+                <div class="footer-widget">
+                    <a href="/" class="footer-logo">
+                        <img src="/assets/img/bumikael-footer.png" alt="Image">
+                    </a>
+                    <p class="comp-desc">
+                        Bumi Kael merupakan perusahaan yang menyediakan venue bagi pesta pernikahan serta menawarkan jasa
+                        untuk mengelola berbagai hal yang terkait dengan pesta pernikahan seperti penyewaan vendor fotografi, catering,
+                        dekorasi venue, entertainment, dan sebagainya.
+                    </p>
+                    <div class="social-link">
+                        <h6>Follow Us :</h6>
+                        <ul class="social-profile style1 list-style">
+                            <li>
+                                <a href="https://www.facebook.com/profile.php?id=100081625748878">
+                                    <i class="flaticon-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/bumika_elandara/?hl=id">
+                                    <i class="flaticon-instagram"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-2 col-lg-4 col-md-3 col-sm-6 ps-xxl-5 ps-xl-4">
+                <div class="footer-widget">
+                    <h3 class="footer-widget-title">Layanan Kami</h3>
+                    <ul class="footer-menu list-style">
+                        <li>
+                            <a href="/">
+                                <i class="ri-arrow-right-s-line"></i>
+                                Beranda
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/reservasi">
+                                <i class="ri-arrow-right-s-line"></i>
+                                Reservasi
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/about-us">
+                                <i class="ri-arrow-right-s-line"></i>
+                                Tentang Kami
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="/review">
+                                <i class="ri-arrow-right-s-line"></i>
+                                Ulasan
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6 ps-xxl-4">
+                <div class="footer-widget">
+                    <h3 class="footer-widget-title">Vendor Kami</h3>
+                    <ul class="footer-menu list-style">
+                        <li>
+                            <a href="/katalog-Catering">
+                                <i class="ri-arrow-right-s-line"></i>
+                                Catering
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/katalog-WO">
+                                <i class="ri-arrow-right-s-line"></i>
+                                Wedding Organizer
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/katalog-Attire">
+                                <i class="ri-arrow-right-s-line"></i>
+                                Attire
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/katalog-Decoration">
+                                <i class="ri-arrow-right-s-line"></i>
+                                Decoration
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/katalog-Entertainment">
+                                <i class="ri-arrow-right-s-line"></i>
+                                Entertainment
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/katalog-Photography">
+                                <i class="ri-arrow-right-s-line"></i>
+                                Photography
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-xl-2 col-lg-5 col-md-6 col-sm-6 ps-xxl-5 ps-xl-4">
+                <div class="footer-widget">
+                    <h3 class="footer-widget-title">Lainnya</h3>
+                    <ul class="footer-menu list-style">
+                        <li>
+                            <a href="/profile/">
+                                <i class="ri-arrow-right-s-line"></i>
+                                Profile
+                            </a>
+                        </li>
+                        <li>
+                            <a data-bs-toggle="modal" href="#staticBackdrop">
+                                <i class="ri-arrow-right-s-line"></i>
+                                Keluar
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-lg-7 col-md-6 col-sm-6 ps-xxl-5">
+                <div class="footer-widget">
+                    <h3 class="footer-widget-title">Official Info</h3>
+                    <ul class="contact-info list-style">
+                        <li>
+                            <i class="ri-map-pin-fill"></i>
+                            <h6>Location</h6>
+                            <p>Antasari No.78 Pangkalan Jati Barat, Cinere</p>
+                        </li>
+                        <li>
+                            <i class="ri-phone-fill"></i>
+                            <h6>Phone</h6>
+                            <a>(+62) 812-9505-3683</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="copyright-text"><span>Bumi KaeL © 2023 ALL RIGHTS RESERVED</span></p>
+</footer>
+<!-- Footer Section End -->
+</nav>
+
+
+<!-- Link of JS files -->
+<script th:src="@{/assets/js/jquery.min.js}"></script>
+<script th:src="@{/assets/js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/assets/js/form-validator.min.js}"></script>
+<script th:src="@{/assets/js/contact-form-script.js}"></script>
+<script th:src="@{/assets/js/aos.js}"></script>
+<script th:src="@{/assets/js/owl.carousel.min.js}"></script>
+<script th:src="@{/assets/js/odometer.min.js}"></script>
+<script th:src="@{/assets/js/fancybox.js}"></script>
+<script th:src="@{/assets/js/jquery.appear.js}"></script>
+<script th:src="@{/assets/js/tweenmax.min.js}"></script>
+<script th:src="@{/assets/js/main.js}"></script>
+
+</body>
+</html>

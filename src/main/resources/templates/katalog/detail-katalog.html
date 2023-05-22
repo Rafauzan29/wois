@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Link of CSS files -->
+    <link rel="stylesheet" th:href="@{/assets/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/flaticon.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/remixicon.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/ionicons.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/owl.carousel.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/odometer.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/fancybox.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/aos.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/style.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/responsive.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/dark-theme.css}">
+    <title th:text="'Katalog ' + ${kategori}"></title>
+    <link rel="icon" type="image/png" th:href="@{/assets/img/favicon.png}">
+</head>
+
+<body>
+
+<!--Preloader starts-->
+<div class="loader js-preloader">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+<!--Preloader ends-->
+
+<!-- Theme Switcher Start -->
+<div class="switch-theme-mode">
+    <label id="switch" class="switch">
+        <input type="checkbox" onchange="toggleTheme()" id="slider">
+        <span class="slider round"></span>
+    </label>
+</div>
+<!-- Theme Switcher End -->
+
+<nav th:replace="fragments/fragment"></nav>
+
+<!-- Content Wrapper Start -->
+<div class="content-wrapper">
+
+    <!-- Breadcrumb Start -->
+    <div class="breadcrumb-wrap">
+        <div class="container">
+            <img src="/assets/img/shape-7.png" alt="Image" class="br-shape-one">
+            <img src="/assets/img/shape-8.png" alt="Image" class="br-shape-two">
+            <img src="/assets/img/shape-7.png" alt="Image" class="br-shape-three">
+            <img src="/assets/img/shape-8.png" alt="Image" class="br-shape-four">
+            <div class="breadcrumb-title">
+                <h2 th:text="'Detail Katalog ' + ${katalog.vendor.nama}"></h2>
+                <ul class="breadcrumb-menu list-style">
+                    <li><a href="/">Home </a></li>
+                    <li><a th:href="@{/katalog-} + ${kategori}" th:text="'Daftar Katalog ' + ${kategori}"></a></li>
+                    <li th:text="'Detail Katalog ' + ${katalog.vendor.nama}"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Breadcrumb End -->
+
+    <!-- Product Details section start -->
+    <section class="product-details-wrap ptb-100">
+        <div class="container">
+            <div class="row gx-5 align-items-xxl-center">
+                <div class="col-xxl-4 col-xl-5 col-lg-6">
+                    <div class="single-product-gallery">
+                        <img th:src="*{'data:image/jpg;base64, '+ {katalog.foto}}" alt="Image">
+                    </div>
+                </div>
+                <div class="col-xxl-7 col-xl-7 col-lg-6">
+
+                    <div class="single-product-details">
+                        <div class="single-product-title">
+                            <h2 th:text="${katalog.vendor.nama}"></h2>
+                            <h3><span th:text="Rp. + ' ' + ${katalog.harga}+ ',00'"></span></h3>
+                        </div>
+
+                        <p class="single-product-desc" th:text="'Berikut adalah Detail Informasi dari Vendor ' + ${katalog.vendor.nama} + ' :'">
+                        </p>
+
+                        <div class="product-more-option">
+
+                            <div class="product-more-option-item">
+                                <h5>Kategori :</h5>
+                                <a th:href="@{/katalog-} + ${kategori}" th:text="${katalog.kategori.kategori}"></a>
+                            </div>
+
+                            <div class="product-more-option-item">
+                                <h5>Instagram :</h5>
+                                <span th:text="'@' + ${katalog.instagram}"></span>
+                            </div>
+
+                            <div class="product-more-option-item">
+                                <h5>Lokasi :</h5>
+                                <span th:text="${katalog.lokasi}"></span>
+                            </div>
+
+                            <div class="product-more-option-item">
+                                <h5>Telp :</h5>
+                                <span th:text="${katalog.vendor.telepon}"></span>
+                            </div>
+                        </div>
+
+                        <a th:href="@{/katalog/update/} + ${katalog.id}" sec:authorize="hasAuthority('ROLE_Super Admin')" class="btn style1 mt-25">Ubah Vendor<i class="flaticon-shopping-cart"></i></a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Product Details section end -->
+
+    <!-- Product Info Start -->
+    <section class="product-info-wrap bg-mystic ptb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+
+                    <ul class="nav nav-tabs product-tablist" role="tablist">
+                        <li class="nav-item">
+                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#tab_1"
+                                    type="button" role="tab">Deskripsi</button>
+                        </li>
+                    </ul>
+
+                    <div class="tab-content product-tab-content">
+                        <div class="tab-pane fade show active" id="tab_1" role="tabpanel">
+                            <div class="product_desc">
+                                <p th:text="${katalog.deskripsi}"></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Product Info End -->
+
+<!--&lt;!&ndash;    TODO : Cari cara kalo bisa untuk menampilkan semua produk&ndash;&gt;-->
+<!--    &lt;!&ndash; Product Section Start &ndash;&gt;-->
+<!--    <section class="product-wrap ptb-100">-->
+<!--        <div class="container">-->
+<!--            <div class="section-title style1 text-center mb-40">-->
+<!--                <span>Check Out</span>-->
+<!--                <h2>More Related Products</h2>-->
+<!--            </div>-->
+<!--            <div class="product-slider-one owl-carousel">-->
+<!--                <div class="product-card style1">-->
+<!--                    <div class="product-img">-->
+<!--                        <img src="/assets/img/product/product-1.png" alt="Image">-->
+<!--                        <ul class="product-option list-style">-->
+<!--                            <li><a href="wishlist.html"><i class="ri-heart-line"></i></a></li>-->
+<!--                            <li><a href="cart.html"><i class="ri-shopping-cart-line"></i></a></li>-->
+<!--                            <li><button type="button"><i class="ri-eye-line"></i></button></li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                    <div class="product-info">-->
+<!--                        <p class="product-price">$250.00 <span class="discount"> $330.00</span></p>-->
+<!--                        <h3><a href="shop-details.html">Blue Wedding Dress</a></h3>-->
+<!--                        <p>Consec adipicing elit debit ipsam ...</p>-->
+<!--                        <div class="product-purchase">-->
+<!--                            <a href="cart.html" class="btn style1">Add To Cart</a>-->
+<!--                            <span class="rating"><i class="ri-star-fill"></i> 3k+ rating</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="product-card style1">-->
+<!--                    <div class="product-img">-->
+<!--                        <img src="/assets/img/product/product-2.png" alt="Image">-->
+<!--                        <ul class="product-option list-style">-->
+<!--                            <li><a href="wishlist.html"><i class="ri-heart-line"></i></a></li>-->
+<!--                            <li><a href="cart.html"><i class="ri-shopping-cart-line"></i></a></li>-->
+<!--                            <li><button type="button"><i class="ri-eye-line"></i></button></li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                    <div class="product-info">-->
+<!--                        <p class="product-price">$170.00 <span class="discount"> $210.00</span></p>-->
+<!--                        <h3><a href="shop-details.html">Flower Decoration</a></h3>-->
+<!--                        <p>Consec adipicing elit debit ipsam ...</p>-->
+<!--                        <div class="product-purchase">-->
+<!--                            <a href="cart.html" class="btn style1">Add To Cart</a>-->
+<!--                            <span class="rating"><i class="ri-star-fill"></i> 4k+ rating</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="product-card style1">-->
+<!--                    <div class="product-img">-->
+<!--                        <img src="/assets/img/product/product-3.png" alt="Image">-->
+<!--                        <ul class="product-option list-style">-->
+<!--                            <li><a href="wishlist.html"><i class="ri-heart-line"></i></a></li>-->
+<!--                            <li><a href="cart.html"><i class="ri-shopping-cart-line"></i></a></li>-->
+<!--                            <li><button type="button"><i class="ri-eye-line"></i></button></li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                    <div class="product-info">-->
+<!--                        <p class="product-price">$310.00 <span class="discount"> $330.00</span></p>-->
+<!--                        <h3><a href="shop-details.html">White Bridal Dress</a></h3>-->
+<!--                        <p>Consec adipicing elit debit ipsam ...</p>-->
+<!--                        <div class="product-purchase">-->
+<!--                            <a href="cart.html" class="btn style1">Add To Cart</a>-->
+<!--                            <span class="rating"><i class="ri-star-fill"></i> 1.4k+ rating</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="product-card style1">-->
+<!--                    <div class="product-img">-->
+<!--                        <img src="/assets/img/product/product-4.png" alt="Image">-->
+<!--                        <ul class="product-option list-style">-->
+<!--                            <li><a href="wishlist.html"><i class="ri-heart-line"></i></a></li>-->
+<!--                            <li><a href="cart.html"><i class="ri-shopping-cart-line"></i></a></li>-->
+<!--                            <li><button type="button"><i class="ri-eye-line"></i></button></li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                    <div class="product-info">-->
+<!--                        <p class="product-price">$240.00</p>-->
+<!--                        <h3><a href="shop-details.html">Bridal Top</a></h3>-->
+<!--                        <p>Consec adipicing elit debit ipsam ...</p>-->
+<!--                        <div class="product-purchase">-->
+<!--                            <a href="cart.html" class="btn style1">Add To Cart</a>-->
+<!--                            <span class="rating"><i class="ri-star-fill"></i>2.1k+ rating</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="product-card style1">-->
+<!--                    <div class="product-img">-->
+<!--                        <img src="/assets/img/product/product-5.png" alt="Image">-->
+<!--                        <ul class="product-option list-style">-->
+<!--                            <li><a href="wishlist.html"><i class="ri-heart-line"></i></a></li>-->
+<!--                            <li><a href="cart.html"><i class="ri-shopping-cart-line"></i></a></li>-->
+<!--                            <li><button type="button"><i class="ri-eye-line"></i></button></li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                    <div class="product-info">-->
+<!--                        <p class="product-price">$310.00 <span class="discount"> $330.00</span></p>-->
+<!--                        <h3><a href="shop-details.html">Gucci Bridal Skirt</a></h3>-->
+<!--                        <p>Consec adipicing elit debit ipsam ...</p>-->
+<!--                        <div class="product-purchase">-->
+<!--                            <a href="cart.html" class="btn style1">Add To Cart</a>-->
+<!--                            <span class="rating"><i class="ri-star-fill"></i> 1k+ rating</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="product-card style1">-->
+<!--                    <div class="product-img">-->
+<!--                        <img src="/assets/img/product/product-6.png" alt="Image">-->
+<!--                        <ul class="product-option list-style">-->
+<!--                            <li><a href="wishlist.html"><i class="ri-heart-line"></i></a></li>-->
+<!--                            <li><a href="cart.html"><i class="ri-shopping-cart-line"></i></a></li>-->
+<!--                            <li><button type="button"><i class="ri-eye-line"></i></button></li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                    <div class="product-info">-->
+<!--                        <p class="product-price">$240.00</p>-->
+<!--                        <h3><a href="shop-details.html">Merun Wedding Dress</a></h3>-->
+<!--                        <p>Consec adipicing elit debit ipsam ...</p>-->
+<!--                        <div class="product-purchase">-->
+<!--                            <a href="cart.html" class="btn style1">Add To Cart</a>-->
+<!--                            <span class="rating"><i class="ri-star-fill"></i> 1.2k+ rating</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
+<!--    &lt;!&ndash; Product Section End &ndash;&gt;-->
+
+</div>
+<!-- Content Wrapper End -->
+<nav th:replace="fragments/footer"></nav>
+
+</div>
+<!-- Page Wrapper End -->
+
+<!-- Back-to-top button Start -->
+<div class="paginacontainer">
+    <div class="progress-wrap bounce">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+        </svg>
+    </div>
+</div>
+<!-- Back-to-top button End -->
+
+<!-- Link of JS files -->
+<script th:src="@{/assets/js/jquery.min.js}"></script>
+<script th:src="@{/assets/js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{/assets/js/form-validator.min.js}"></script>
+<script th:src="@{/assets/js/contact-form-script.js}"></script>
+<script th:src="@{/assets/js/aos.js}"></script>
+<script th:src="@{/assets/js/owl.carousel.min.js}"></script>
+<script th:src="@{/assets/js/odometer.min.js}"></script>
+<script th:src="@{/assets/js/fancybox.js}"></script>
+<script th:src="@{/assets/js/jquery.appear.js}"></script>
+<script th:src="@{/assets/js/tweenmax.min.js}"></script>
+<script th:src="@{/assets/js/main.js}"></script>
+
+
+</body>
+
+</html>
+
+<!--<title th:text="'Detail Katalog ' + ${katalog.vendor.nama}"></title>-->
+<!--<h2 style="text-align: center">Detail Katalog</h2>-->
+
+<!--<div class="container">-->
+<!--    <div class="card m-4 p-4">-->
+<!--        <div class="card-body">-->
+<!--            <div class="justify-content-center" style="text-align: center">-->
+<!--                <img th:src="*{'data:image/jpg;base64, '+ {katalog.foto}}" style="width: 50rem">-->
+<!--                <br><br>-->
+<!--                <p th:text="'Nama Vendor: ' + ${katalog.vendor.nama}"></p>-->
+<!--                <p th:text="'Kategori: ' + ${katalog.kategori.kategori}"></p>-->
+<!--                <p th:text="'Instagram: ' + ${katalog.instagram}"></p>-->
+<!--                <p th:text="'Lokasi: ' + ${katalog.lokasi}"></p>-->
+<!--                <p th:text="'Harga: ' + ${katalog.harga}"></p>-->
+<!--                <p th:text="'Telepon: ' + ${katalog.vendor.telepon}"></p>-->
+<!--                <p th:text="'Harga: ' + ${katalog.deskripsi}"></p>-->
+<!--                <a class="btn btn-outline-info" th:href="'/katalog-' + ${kategori}">Kembali</a>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->

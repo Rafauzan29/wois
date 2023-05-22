@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Konfirmasi Hapus User</title>
+<!--  <object th:include="fragments/fragment :: css" th:remove="tag"></object>-->
+<!--  <object th:include="fragments/fragment :: js" th:remove="tag"></object>-->
+</head>
+<body style="background-color: #C7BC9C">
+<nav th:replace="fragments/fragment :: navbar('Admin')"></nav>
+<div class="container">
+  <div class="card m-4 p-4 shadow p-3 mb-5 bg-white rounded">
+    <div class="card-body">
+      <div class="justify-content-center">
+        <form th:action="@{/user/hapus/} + ${user.uuid}" method="post">
+          <h2>Apakah anda ingin menghapus user dengan nama <span style="color: #0C8546; font-weight: bold;" th:text="' ' + ${user.nama}"></span>?</h2>
+          <br>
+          <button type="submit" class="btn btn-danger" style="width: 100px; height: 45px; color: white">Hapus</button>
+          <a class="btn" style="width: 100px; height: 45px; color: white; background-color: #848484" th:href="@{/user}">Tidak</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
